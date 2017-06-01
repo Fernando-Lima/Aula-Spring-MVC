@@ -10,8 +10,15 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codigo;
-	private String nomeCliente = "Fernando";
+	private String nomeCliente;
+	private String telefone;
 	
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -26,12 +33,13 @@ public class Cliente {
 	}
 	@Override
 	public String toString() {
-		return "Cliente [codigo=" + codigo + ", nomeCliente=" + nomeCliente + "]";
+		return "Cliente [telefone=" + telefone +", codigo=" + codigo + ", nomeCliente=" + nomeCliente + "]";
 	}
-	public Cliente(Long codigo, String nomeCliente) {
+	public Cliente(Long codigo, String nomeCliente, String telefone) {
 		super();
 		this.codigo = codigo;
 		this.nomeCliente = nomeCliente;
+		this.telefone = telefone;
 	}
 	public Cliente() {
 		super();

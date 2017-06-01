@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fernandolima.gerenciamento.model.Cliente;
 import com.fernandolima.gerenciamento.model.Fibra;
 import com.fernandolima.gerenciamento.repository.GenericRepository;
 
@@ -56,12 +57,16 @@ public class InstalacaoController {
 	public String pesquisarCliente(){
 		return "TabelaCliente";
 	}
+	@RequestMapping("/cliente/novo")
+	public String novoCliente(){
+		return "CadastroCliente";
+	}
 
-	@RequestMapping(value="/instalacaoFibra", method = RequestMethod.POST)
-	public ModelAndView salvarFibra(Fibra fibra) {
-		genericRepository.save(fibra);
-		ModelAndView mv = new ModelAndView("CadastroInstalacaoFibra");
-		mv.addObject("mensagemInstalacao","instalação salva com sucesso!");
+	@RequestMapping(value="/salvar", method = RequestMethod.POST)
+	public ModelAndView salvar(Cliente cliente) {
+		genericRepository.save(cliente);
+		ModelAndView mv = new ModelAndView("CadastroCliente");
+		mv.addObject("mensagemInstalacao","cliente salvo com sucesso!");
 		return mv;
 	}
 }
