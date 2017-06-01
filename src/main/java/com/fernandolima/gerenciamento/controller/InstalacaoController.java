@@ -1,5 +1,7 @@
 package com.fernandolima.gerenciamento.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,12 +56,16 @@ public class InstalacaoController {
 	}
 	
 	@RequestMapping("/cliente")
-	public String pesquisarCliente(){
-		return "TabelaCliente";
+	public ModelAndView pesquisarCliente(){
+		List<Cliente> todosClientes = genericRepository.findAll();
+		ModelAndView mv = new ModelAndView("TabelaCliente");
+		mv.addObject("clientes", todosClientes);
+		return mv;
 	}
 	@RequestMapping("/cliente/novo")
-	public String novoCliente(){
-		return "CadastroCliente";
+	public ModelAndView novoCliente(){
+		ModelAndView mv = new ModelAndView("CadastroCliente");
+		return mv;
 	}
 
 	@RequestMapping(value="/salvar", method = RequestMethod.POST)
