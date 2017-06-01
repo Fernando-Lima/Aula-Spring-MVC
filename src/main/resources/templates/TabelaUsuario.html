@@ -57,12 +57,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center">
+                                        <tr th:each="usuario :${usuarios}">
+                                            <td class="text-center" th:text="${usuario.codigo}">
                                             </td>
-                                            <td >
+                                            <td th:text="${usuario.nome}">
                                             </td>
-                                            <td class="text-center">
+                                            <td class="text-center" th:text="${usuario.categoriaUsuario.descricao}">
                                             </td>
                                         </tr>
                                         <tr>

@@ -73,9 +73,9 @@ public class InstalacaoController {
 	}
 	@RequestMapping("/usuario")
 	public ModelAndView pesquisarUsuario(){
-	//	List<Usuario> todosUsuarios = genericRepository.findAll();
+		List<Usuario> todosUsuarios = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaUsuario");
-		//mv.addObject("clientes", todosUsuarios);
+		mv.addObject("usuarios", todosUsuarios);
 		return mv;
 	}
 	@RequestMapping("/usuario/novo")
