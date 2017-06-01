@@ -5,14 +5,16 @@
 .left {
     float: left;
 }
-.checkbox-tecnicos{
-	margin-left: 20px; 
+
+.checkbox-tecnicos {
+    margin-left: 20px;
 }
+
 p {
     color: #777;
 }
 
-..navbar {
+.navbar {
     margin-bottom: 0 !important;
 }
 
@@ -39,3 +41,16 @@ p {
 .main {
     margin-top: 20px;
 }
+.campoId{
+	width: 0.3% !important;
+}
+
+
+
+
+
+
+
+
+
+

@@ -51,6 +51,11 @@ public class InstalacaoController {
 	public String novaInstalacaoRadio() {
 		return "CadastroInstalacaoRadio";
 	}
+	
+	@RequestMapping("/cliente")
+	public String pesquisarCliente(){
+		return "TabelaCliente";
+	}
 
 	@RequestMapping(value="/instalacaoFibra", method = RequestMethod.POST)
 	public ModelAndView salvarFibra(Fibra fibra) {
