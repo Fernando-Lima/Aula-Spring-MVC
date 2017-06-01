@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html layout:decorator="LayoutPadrao" xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Cadastro de instalação
+        </title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <section layout:fragment="conteudo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="main col-sm-9 col-md-10">
+                    <form action="/comissao/instalacaoFibra" class="form-horizontal" method="POST">
+                        <div layout:include="MensagemGeral">
+                        </div>
+                        
+                        <div class="panel panel-default margin10">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">
+                                    Nova instalação de Fibra
+                                </h1>
+                            </div>
+                            <div class="panel-body ">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="nomeCliente">
+                                        <p>
+                                            Nome do Cliente
+                                        </p>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input class="col-sm-12 form-control" id="nomeCliente" name="nomeCliente" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="dataVencimento">
+                                        <p>
+                                            Data da instalação
+                                        </p>
+                                    </label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" data-date-autoclose="true" data-date-format="dd/mm/yyyy/" data-date-language="pt-BR" data-date-today-highlight="true" data-provide="datepicker" id="dataVencimento" name="dataInstalacao" type="text"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">
+                                        <p>
+                                            Técnicos
+                                        </p>
+                                    </label>
+                                    <div class="col-sm-2 checkbox-tecnicos">
+                                        <label class="checkbox">
+                                            <input type="checkbox"/>
+                                            <div class="checkbox-tecnicos">
+                                                <p>
+                                                    Fernando
+                                                </p>
+                                            </div>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox"/>
+                                            <div class="checkbox-tecnicos">
+                                                <p>
+                                                    João
+                                                </p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-10">
+                                        <button class="btn btn-primary" type="submit">
+                                            Salvar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</html>
