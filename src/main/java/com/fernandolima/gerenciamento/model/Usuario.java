@@ -13,9 +13,13 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codigo;
+	
 	private String nome;
+	
 	@Enumerated(EnumType.STRING)
 	private CategoriaUsuario categoriaUsuario;
+	
+	
 	public Long getCodigo() {
 		return codigo;
 	}

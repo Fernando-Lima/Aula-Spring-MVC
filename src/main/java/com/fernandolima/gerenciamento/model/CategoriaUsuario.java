@@ -5,13 +5,13 @@ public enum CategoriaUsuario {
 	SECRETARIO ("Seretário(a)"),
 	GERENTE ("Gerente");
 	
-	private String categoria;
+	private String descricao;
 	
-	CategoriaUsuario(String categoria) {
-		this.categoria = categoria;
+	CategoriaUsuario(String descricao) {
+		this.descricao = descricao;
 	}
-	public String getCategoria(){
-		return categoria;
+	public String getDescricao(){
+		return descricao;
 	}
 	
 }
