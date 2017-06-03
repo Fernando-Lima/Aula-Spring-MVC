@@ -4,14 +4,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codigo;
+	
+	@NotNull
 	private String nomeCliente;
+	
+	@NotNull
+	private String cpf;
+	
+	@NotNull
 	private String telefone;
+	
 	
 	public String getTelefone() {
 		return telefone;
@@ -31,15 +40,22 @@ public class Cliente {
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
+	public String getCpf(){
+		return cpf;
+	}
+	public void setCpf(String cpf){
+		this.cpf = cpf;
+	}
 	@Override
 	public String toString() {
-		return "Cliente [telefone=" + telefone +", codigo=" + codigo + ", nomeCliente=" + nomeCliente + "]";
+		return "Cliente [telefone=" + telefone +",cpf=" + cpf + ", codigo=" + codigo + ", nomeCliente=" + nomeCliente + "]";
 	}
-	public Cliente(Long codigo, String nomeCliente, String telefone) {
+	public Cliente(Long codigo, String nomeCliente, String telefone, String cpf) {
 		super();
 		this.codigo = codigo;
 		this.nomeCliente = nomeCliente;
 		this.telefone = telefone;
+		this.cpf = cpf;
 	}
 	public Cliente() {
 		super();

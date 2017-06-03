@@ -61,9 +61,9 @@ public class InstalacaoController {
 	
 	@RequestMapping("/cliente")
 	public ModelAndView pesquisarCliente(){
-		//List<Cliente> todosClientes = genericRepository.findAll();
+		List<Cliente> todosClientes = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaCliente");
-		//mv.addObject("clientes", todosClientes);
+		mv.addObject("clientes", todosClientes);
 		return mv;
 	}
 	@RequestMapping("/cliente/novo")
@@ -73,9 +73,9 @@ public class InstalacaoController {
 	}
 	@RequestMapping("/usuario")
 	public ModelAndView pesquisarUsuario(){
-		List<Usuario> todosUsuarios = genericRepository.findAll();
+		//List<Usuario> todosUsuarios = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaUsuario");
-		mv.addObject("usuarios", todosUsuarios);
+		//mv.addObject("usuarios", todosUsuarios);
 		return mv;
 	}
 	@RequestMapping("/usuario/novo")
@@ -85,10 +85,10 @@ public class InstalacaoController {
 	}
 
 	@RequestMapping(value="/salvar", method = RequestMethod.POST)
-	public ModelAndView salvar(Usuario usuario) {
-		genericRepository.save(usuario);
-		ModelAndView mv = new ModelAndView("CadastroUsuario");
-		mv.addObject("mensagemInstalacao","usuario salvo com sucesso!");
+	public ModelAndView salvar(Cliente cliente) {
+		genericRepository.save(cliente);
+		ModelAndView mv = new ModelAndView("CadastroCliente");
+		mv.addObject("mensagemInstalacao","Cliente salvo com sucesso!");
 		return mv;
 	}
 	@ModelAttribute("todasCategorias")
