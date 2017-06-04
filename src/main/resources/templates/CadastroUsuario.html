@@ -13,14 +13,15 @@
 		<div class="row">
 			<div class="main col-sm-9 col-md-10">
 				<form action="/comissao/salvar" class="form-horizontal"
-					method="POST">
+					method="POST" th:object="${usuario}">
 					<div layout:include="MensagemGeral"></div>
+					<div layout:include="MensagemErro"></div>
 					<div class="panel panel-default margin10">
 						<div class="panel-heading">
 							<h1 class="panel-title">Novo usuario</h1>
 						</div>
 						<div class="panel-body ">
-							<div class="form-group">
+							<div class="form-group" th:classappend="${#fields.hasErrors('nome')} ? has-error">
 								<label class="col-sm-4 control-label" for="nome">
 									<p>Nome</p>
 								</label>

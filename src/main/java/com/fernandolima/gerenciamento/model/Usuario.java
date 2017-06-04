@@ -6,6 +6,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Usuario {
@@ -14,6 +17,7 @@ public class Usuario {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codigo;
 	
+	@NotEmpty(message="Campo nome é obrigatório")
 	private String nome;
 	
 	@Enumerated(EnumType.STRING)

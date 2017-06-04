@@ -11,8 +11,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="main col-sm-9 col-md-10">
-                    <form action="/comissao/salvar" class="form-horizontal" method="POST">
+                    <form action="/comissao/salvar" class="form-horizontal" method="POST" th:object="${cliente}">
                         <div layout:include="MensagemGeral">
+                        </div>
+                        <div layout:include="MensagemErro">
                         </div>
                         <div class="panel panel-default margin10">
                             <div class="panel-heading">
@@ -21,17 +23,17 @@
                                 </h1>
                             </div>
                             <div class="panel-body ">
-                                <div class="form-group">
+                                <div class="form-group" th:classappend="${#fields.hasErrors('nomeCliente')} ? has-error">
                                     <label class="col-sm-4 control-label" for="nomeCliente">
                                         <p>
                                             Nome
                                         </p>
                                     </label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4" >
                                         <input class="col-sm-12 form-control" id="nomeCliente" name="nomeCliente" type="text"/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" th:classappend="${#fields.hasErrors('telefone')} ? has-error">
                                     <label class="col-sm-4 control-label" for="telefone">
                                         <p>
                                             Telefone
@@ -41,7 +43,7 @@
                                         <input class="form-control" id="telefone" name="telefone" type="text"/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" th:classappend="${#fields.hasErrors('cpf')} ? has-error">
                                     <label class="col-sm-4 control-label" for="cpf">
                                         <p>
                                             CPF

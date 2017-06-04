@@ -5,62 +5,60 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Cliente {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
-	@NotNull
+
+	@NotEmpty(message="É preciso informar o nome do cliente")
+	@Size(max = 30, message="Nome não pode conter mais de 30 caracteres")
 	private String nomeCliente;
-	
-	@NotNull
+
+	@NotEmpty(message="É preciso informar o cpf do cliente")
+	@Size(max = 11, min=11, message ="CPF não existe ")
 	private String cpf;
-	
-	@NotNull
+
+	@NotEmpty(message="É preciso informar o telefone do cliente")
+	@Size(max = 16, message="Telefone não pode conter mais do que 16 caracteres")
 	private String telefone;
-	
-	
+
 	public String getTelefone() {
 		return telefone;
 	}
+
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
 	public Long getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getNomeCliente() {
 		return nomeCliente;
 	}
+
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
-	public String getCpf(){
+
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf){
+
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	@Override
-	public String toString() {
-		return "Cliente [telefone=" + telefone +",cpf=" + cpf + ", codigo=" + codigo + ", nomeCliente=" + nomeCliente + "]";
-	}
-	public Cliente(Long codigo, String nomeCliente, String telefone, String cpf) {
-		super();
-		this.codigo = codigo;
-		this.nomeCliente = nomeCliente;
-		this.telefone = telefone;
-		this.cpf = cpf;
-	}
-	public Cliente() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -68,6 +66,7 @@ public class Cliente {
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -84,6 +83,5 @@ public class Cliente {
 			return false;
 		return true;
 	}
-	
-	
+
 }
