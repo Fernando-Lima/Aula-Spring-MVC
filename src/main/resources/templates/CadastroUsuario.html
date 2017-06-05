@@ -26,7 +26,7 @@
 									<p>Nome</p>
 								</label>
 								<div class="col-sm-4">
-									<input class="col-sm-12 form-control" id="nome" name="nome"
+									<input class="col-sm-12 form-control" id="nome" th:field="*{nome}"
 										type="text" />
 								</div>
 							</div>
@@ -34,7 +34,7 @@
 								<label class="col-sm-4 control-label" for="categoria">
 									<p>Categoria</p> </label>
 								<div class="col-sm-2">
-									<select class="form-control" name="categoriaUsuario">
+									<select class="form-control" th:field="*{categoriaUsuario}">
 										<option th:each="categorias : ${todasCategorias}"
 										 th:value="${categorias}" th:text="${categorias.descricao}"></option>
 									</select>

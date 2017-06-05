@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fernandolima.gerenciamento.model.CategoriaUsuario;
 import com.fernandolima.gerenciamento.model.Cliente;
@@ -63,9 +64,9 @@ public class InstalacaoController {
 	
 	@RequestMapping("/cliente")
 	public ModelAndView pesquisarCliente(){
-		//List<Cliente> todosClientes = genericRepository.findAll();
+		List<Cliente> todosClientes = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaCliente");
-		//mv.addObject("clientes", todosClientes);
+		mv.addObject("clientes", todosClientes);
 		return mv;
 	}
 	@RequestMapping("/cliente/novo")
@@ -76,9 +77,9 @@ public class InstalacaoController {
 	}
 	@RequestMapping("/usuario")
 	public ModelAndView pesquisarUsuario(){
-		List<Usuario> todosUsuarios = genericRepository.findAll();
+		//List<Usuario> todosUsuarios = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaUsuario");
-		mv.addObject("usuarios", todosUsuarios);
+		//mv.addObject("usuarios", todosUsuarios);
 		return mv;
 	}
 	@RequestMapping("/usuario/novo")
@@ -89,15 +90,14 @@ public class InstalacaoController {
 	}
 
 	@RequestMapping(value="/salvar", method = RequestMethod.POST)
-	public ModelAndView salvar(@Validated Usuario usuario, Errors errors) {
-		ModelAndView mv = new ModelAndView("CadastroUsuario");
+	public String salvar(@Validated Cliente cliente, Errors errors, RedirectAttributes attributes) {
 		if(errors.hasErrors()){
-			return mv;
+			return "CadastroCliente";
 		}
 		
-		genericRepository.save(usuario);
-		mv.addObject("mensagemInstalacao","Usuario salvo com sucesso!");
-		return mv;
+		genericRepository.save(cliente);
+		attributes.addFlashAttribute("mensagemInstalacao","Cliente salvo com sucesso!");
+		return "redirect:/comissao/cliente/novo";
 	}
 	@ModelAttribute("todasCategorias")
 	public List<CategoriaUsuario> todasCategorias(){
