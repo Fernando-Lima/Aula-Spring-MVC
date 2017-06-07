@@ -19,8 +19,8 @@ public class Cliente {
 	@Size(max = 30, message="Nome não pode conter mais de 30 caracteres")
 	private String nomeCliente;
 
-	@NotEmpty(message="É preciso informar o cpf do cliente")
 	@Size(max = 11, min=11, message ="CPF não existe ")
+	@NotEmpty(message="É preciso informar o cpf do cliente")
 	private String cpf;
 
 	@NotEmpty(message="É preciso informar o telefone do cliente")
