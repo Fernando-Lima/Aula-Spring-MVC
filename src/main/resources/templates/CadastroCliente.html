@@ -23,6 +23,7 @@
                                 </h1>
                             </div>
                             <div class="panel-body ">
+                            <input type="hidden" th:field="*{codigo}">
                                 <div class="form-group" th:classappend="${#fields.hasErrors('nomeCliente')} ? has-error">
                                     <label class="col-sm-4 control-label" for="nomeCliente">
                                         <p>
