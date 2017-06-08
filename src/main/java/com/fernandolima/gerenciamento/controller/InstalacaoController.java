@@ -103,8 +103,7 @@ public class InstalacaoController {
 	}
 	
 	@RequestMapping("/cliente/{codigo}")
-	public ModelAndView edicao(@PathVariable Long codigo){
-		Cliente cliente = genericRepository.findOne(codigo);// irá dar um select na tabela cliente onde o id for = valor da variável "codigo"
+	public ModelAndView edicao(@PathVariable("codigo") Cliente cliente){
 		ModelAndView mv = new ModelAndView(CADASTRO_CLIENTE_VIEW);
 		mv.addObject(cliente);
 		return mv;
