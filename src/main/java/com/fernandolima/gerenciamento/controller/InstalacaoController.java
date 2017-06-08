@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +23,7 @@ import com.fernandolima.gerenciamento.repository.GenericRepository;
 @Controller
 @RequestMapping("/comissao")
 public class InstalacaoController {
+	private static final String CADASTRO_CLIENTE_VIEW = "CadastroCliente";
 	
 	@Autowired
 	private GenericRepository genericRepository;
@@ -71,7 +73,7 @@ public class InstalacaoController {
 	}
 	@RequestMapping("/cliente/novo")
 	public ModelAndView novoCliente(){
-		ModelAndView mv = new ModelAndView("CadastroCliente");
+		ModelAndView mv = new ModelAndView(CADASTRO_CLIENTE_VIEW);
 		mv.addObject(new Cliente());
 		return mv;
 	}
@@ -99,6 +101,15 @@ public class InstalacaoController {
 		attributes.addFlashAttribute("mensagemInstalacao","Cliente salvo com sucesso!");
 		return "redirect:/comissao/cliente/novo";
 	}
+	
+	@RequestMapping("/cliente/{codigo}")
+	public ModelAndView edicao(@PathVariable Long codigo){
+		Cliente cliente = genericRepository.findOne(codigo);// irá dar um select na tabela cliente onde o id for = valor da variável "codigo"
+		ModelAndView mv = new ModelAndView(CADASTRO_CLIENTE_VIEW);
+		mv.addObject(cliente);
+		return mv;
+	}
+	
 	@ModelAttribute("todasCategorias")
 	public List<CategoriaUsuario> todasCategorias(){
 		return Arrays.asList(CategoriaUsuario.values());
