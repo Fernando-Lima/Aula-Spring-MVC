@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
-    <div class="alert alert-success alert-dismissible" role="alert" th:if="${!#strings.isEmpty(mensagemInstalacao)}">
-        <span th:text="${mensagemInstalacao}">
-            
-        </span>
-    </div>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+	<div class="alert alert-success alert-dismissible" role="alert"
+			th:if="${!#strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}">Titulo salvo com !</span>
+		</div>
+
 </html>

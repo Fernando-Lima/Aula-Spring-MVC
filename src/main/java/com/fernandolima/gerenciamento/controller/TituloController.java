@@ -39,7 +39,7 @@ public class TituloController {
 		return mv;
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="/salvar", method = RequestMethod.POST)
 	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attributes){
 		if(errors.hasErrors()){
 			return "CadastroTitulo";
@@ -47,7 +47,7 @@ public class TituloController {
 		try {
 			cadastroTituloService.salvar(titulo);
 			attributes.addFlashAttribute("mensagem","Título salvo com sucesso!");
-			return "redirect:/titulos/novo";
+			return "redirect:/comissao/titulos/novo";
 		} catch (IllegalArgumentException e) {
 			errors.rejectValue("dataVencimento", null, e.getMessage());
 			return CADASTRO_VIEW;
@@ -74,7 +74,7 @@ public class TituloController {
 	public String excluir(@PathVariable Long codigo , RedirectAttributes attributes){ 
 		cadastroTituloService.excluir(codigo);
 		attributes.addFlashAttribute("mensagem","Título excluído com sucesso!");
-		return "redirect:/titulos";
+		return "redirect:/comissao/titulos";
 	}
 	
 	@RequestMapping(value="/{codigo}/receber", method= RequestMethod.PUT )
