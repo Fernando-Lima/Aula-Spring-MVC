@@ -108,6 +108,11 @@ public class InstalacaoController {
 		mv.addObject(cliente);
 		return mv;
 	}
+	@RequestMapping(value="/cliente/{codigo}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long codigo){
+		genericRepository.delete(codigo);
+		return "redirect:/comissao/cliente";
+	}
 	
 	@ModelAttribute("todasCategorias")
 	public List<CategoriaUsuario> todasCategorias(){

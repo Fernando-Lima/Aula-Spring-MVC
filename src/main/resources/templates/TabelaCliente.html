@@ -74,7 +74,7 @@
                                                     <span aria-hidden="true" class="glyphicon glyphicon-pencil">
                                                     </span>
                                                 </a>
-                                                <a class="btn btn-link btn-xs" data-placement="top" title="Excluir">
+                                                <a class="btn btn-link btn-xs" data-placement="top" title="Excluir" data-toggle="modal" data-target="#confirmacaoExclusaoModal">
                                                     <span aria-hidden="true" class="glyphicon glyphicon-remove">
                                                     </span>
                                                 </a>
@@ -96,6 +96,7 @@
                     </div>
                 </div>
             </div>
+            <div layout:include="DialogoConfirmacaoExclusao"></div>
         </div>
     </section>
 </html>
