@@ -24,7 +24,7 @@ import com.fernandolima.gerenciamento.repository.filter.TituloFilter;
 import com.fernandolima.gerenciamento.service.CadastroTituloService;
 
 @Controller
-@RequestMapping("comissao/titulos")
+@RequestMapping("/titulos")
 public class TituloController {
 	private static final String CADASTRO_VIEW = "CadastroTitulo";
 
@@ -47,7 +47,7 @@ public class TituloController {
 		try {
 			cadastroTituloService.salvar(titulo);
 			attributes.addFlashAttribute("mensagem","Título salvo com sucesso!");
-			return "redirect:/comissao/titulos/novo";
+			return "redirect:/titulos/novo";
 		} catch (IllegalArgumentException e) {
 			errors.rejectValue("dataVencimento", null, e.getMessage());
 			return CADASTRO_VIEW;
@@ -74,7 +74,7 @@ public class TituloController {
 	public String excluir(@PathVariable Long codigo , RedirectAttributes attributes){ 
 		cadastroTituloService.excluir(codigo);
 		attributes.addFlashAttribute("mensagem","Título excluído com sucesso!");
-		return "redirect:/comissao/titulos";
+		return "redirect:/titulos";
 	}
 	
 	@RequestMapping(value="/{codigo}/receber", method= RequestMethod.PUT )

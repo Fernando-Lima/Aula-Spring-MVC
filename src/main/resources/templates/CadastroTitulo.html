@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="main col-sm-9 col-md-10">
-                    <form class="form-horizontal" method="POST" th:action="@{/comissao/titulos/salvar}" th:object="${titulo}">
+                    <form class="form-horizontal" method="POST" th:action="@{/titulos/salvar}" th:object="${titulo}">
                         <div layout:include="MensagemGeral">
                         </div>
                         <div layout:include="MensagemErro">
@@ -19,7 +19,7 @@
                                 <h1 class="panel-title">
                                     Novo título
                                 </h1>
-                                <a class="btn btn-link" th:href="@{/comissao/titulos}">
+                                <a class="btn btn-link" th:href="@{/titulos}">
                                     Voltar
                                 </a>
                             </div>

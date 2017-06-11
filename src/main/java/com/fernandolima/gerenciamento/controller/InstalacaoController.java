@@ -21,28 +21,25 @@ import com.fernandolima.gerenciamento.model.Usuario;
 import com.fernandolima.gerenciamento.repository.GenericRepository;
 
 @Controller
-@RequestMapping("/comissao")
+@RequestMapping("/instalacao")
 public class InstalacaoController {
 	
 	@Autowired
 	private GenericRepository genericRepository;
 
-	@RequestMapping
-	public String pesquisarComissao() {
-		return "Comissao";
-	}
-
-	@RequestMapping("/instalacaoFibra")
-	public String instalacaoFibra() {
+	@RequestMapping("/fibra")
+	public String pesquisarFibra() {
 		return "TabelaInstalacaoFibra";
 	}
 
-	@RequestMapping("/instalacaoFibra/novo")
+	@RequestMapping("/fibra/novo")
 	public ModelAndView novaInstalacaoFibra() {
 		ModelAndView mv = new ModelAndView("CadastroInstalacaoFibra");
 		return mv;
 	}
-
+/*--------------------------------------------------------------------------------------------------------------*/
+	
+	
 	@RequestMapping("/upgradeFibra")
 	public String UpgradeFibra() {
 		return "TabelaUpgradeFibra";
@@ -53,40 +50,14 @@ public class InstalacaoController {
 		return "CadastroUpgradeFibra";
 	}
 
-	@RequestMapping("/instalacaoRadio")
+	@RequestMapping("/radio")
 	public String instalacaoRadio() {
 		return "TabelaInstalacaoRadio";
 	}
 
-	@RequestMapping("/instalacaoRadio/novo")
+	@RequestMapping("/radio/novo")
 	public String novaInstalacaoRadio() {
 		return "CadastroInstalacaoRadio";
-	}
-	
-	
-	@RequestMapping("/usuario")
-	public ModelAndView pesquisarUsuario(){
-		//List<Usuario> todosUsuarios = genericRepository.findAll();
-		ModelAndView mv = new ModelAndView("TabelaUsuario");
-		//mv.addObject("usuarios", todosUsuarios);
-		return mv;
-	}
-	@RequestMapping("/usuario/novo")
-	public ModelAndView novoUsuario(){
-		ModelAndView mv = new ModelAndView("CadastroUsuario");
-		mv.addObject(new Usuario());
-		return mv;
-	}
-
-	@RequestMapping(value="/salvar", method = RequestMethod.POST)
-	public String salvar(@Validated Cliente cliente, Errors errors, RedirectAttributes attributes) {
-		if(errors.hasErrors()){
-			return "CadastroCliente";
-		}
-		
-		genericRepository.save(cliente);
-		attributes.addFlashAttribute("mensagemInstalacao","Cliente salvo com sucesso!");
-		return "redirect:/comissao/cliente/novo";
 	}
 	
 	@ModelAttribute("todasCategorias")

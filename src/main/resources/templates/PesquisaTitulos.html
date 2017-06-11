@@ -30,7 +30,7 @@
 										</span>
 									</div>
 								</div>
-								<a th:href="@{/comissao/titulos/novo}">
+								<a th:href="@{/titulos/novo}">
 									<button class="btn btn-primary right" type="button">
 										Novo</button>
 								</a>
@@ -62,19 +62,19 @@
 									</td>
 									<td class="text-center"><a class="btn btn-link btn-xs"
 										data-placement="top" rel="tooltip"
-										th:href="@{/comissao/titulos/{codigo}(codigo=${titulo.codigo})}"
+										th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}"
 										title="Editar"> <span aria-hidden="true"
 											class="glyphicon glyphicon-pencil"> </span>
 									</a> <a class="btn btn-link btn-xs" data-placement="top"
 										data-target="#confirmacaoExclusaoModal" data-toggle="modal"
 										rel="tooltip"
-										th:attr=" data-codigo=${titulo.codigo},data-descricao=${titulo.descricao}"
+										th:attr=" data-codigo=${titulo.codigo},data-descricao=${titulo.descricao},data-nomeview=titulos"
 										title="Excluir"> <span aria-hidden="true"
 											class="glyphicon glyphicon-remove"> </span>
 									</a> <a class="btn btn-link btn-xs js-atualizar-status"
 										data-placement="top" rel="tooltip"
 										th:attr="data-codigo=${titulo.codigo}"
-										th:href="@{/comissao/titulos/{codigo}/receber(codigo=${titulo.codigo})}"
+										th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}"
 										th:if="${titulo.pendente}" title="Receber"> <span
 											aria-hidden="true" class="glyphicon glyphicon-check">
 										</span>

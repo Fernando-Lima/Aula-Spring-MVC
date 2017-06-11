@@ -25,9 +25,9 @@ public class ClienteController {
 
 	@RequestMapping
 	public ModelAndView pesquisarCliente(){
-		List<Cliente> todosClientes = genericRepository.findAll();
+		//List<Cliente> todosClientes = genericRepository.findAll();
 		ModelAndView mv = new ModelAndView("TabelaCliente");
-		mv.addObject("clientes", todosClientes);
+		//mv.addObject("clientes", todosClientes);
 		return mv;
 	}
 	@RequestMapping("/novo")
@@ -42,7 +42,7 @@ public class ClienteController {
 		if(errors.hasErrors()){
 			return "CadastroCliente";
 		}
-		genericRepository.save(cliente);
+		//genericRepository.save(cliente);
 		attributes.addFlashAttribute("mensagemInstalacao","Cliente salvo com sucesso!");
 		return "redirect:/cliente/novo";
 	}
