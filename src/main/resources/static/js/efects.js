@@ -1,15 +1,16 @@
 $('#confirmacaoExclusaoModal').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
-    var codigoTitulo = button.data('codigo');
-    var descricaoTitulo = button.data('descricao');
+    var codigo = button.data('codigo');
+    var descricao = button.data('descricao');
+    var nomeDaView = button.data('nomeview');
     var modal = $(this);
     var form = modal.find('form');
     var action = form.data('url-base');
     if (!action.endsWith('/')) {
         action += '/';
     }
-    form.attr('action', action + codigoTitulo);
-    modal.find('.modal-body span').html('Tem certeza que deseja excluir o título <strong>' + descricaoTitulo + '</strong>?');
+    form.attr('action', action + nomeDaView +'/' +codigo);
+    modal.find('.modal-body span').html('Tem certeza que deseja excluir o '+nomeDaView+' <strong>' + descricao + '</strong>?');
 });
 $(function() {
     $('[rel="tooltip"]').tooltip();
@@ -26,8 +27,8 @@ $(function() {
             type: 'PUT'
         });
         response.done(function(e) {
-            var codigoTitulo = botaoReceber.data('codigo');
-            $('[data-role=' + codigoTitulo + ']').html('<span class="label label-success">' + e + '</span>');
+            var codigo = botaoReceber.data('codigo');
+            $('[data-role=' + codigo + ']').html('<span class="label label-success">' + e + '</span>');
             botaoReceber.hide();
         });
         response.fail(function(e) {

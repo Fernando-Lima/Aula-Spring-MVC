@@ -16,9 +16,5 @@ public class LoginController {
 	public String dashboard(){
 		return "index";
 	}
-	@RequestMapping("/comissao")
-	public String comissao(){
-		return "Comissao";
-	}
 
 }

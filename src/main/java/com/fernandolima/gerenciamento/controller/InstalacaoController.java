@@ -23,7 +23,6 @@ import com.fernandolima.gerenciamento.repository.GenericRepository;
 @Controller
 @RequestMapping("/comissao")
 public class InstalacaoController {
-	private static final String CADASTRO_CLIENTE_VIEW = "CadastroCliente";
 	
 	@Autowired
 	private GenericRepository genericRepository;
@@ -64,19 +63,7 @@ public class InstalacaoController {
 		return "CadastroInstalacaoRadio";
 	}
 	
-	@RequestMapping("/cliente")
-	public ModelAndView pesquisarCliente(){
-		List<Cliente> todosClientes = genericRepository.findAll();
-		ModelAndView mv = new ModelAndView("TabelaCliente");
-		mv.addObject("clientes", todosClientes);
-		return mv;
-	}
-	@RequestMapping("/cliente/novo")
-	public ModelAndView novoCliente(){
-		ModelAndView mv = new ModelAndView(CADASTRO_CLIENTE_VIEW);
-		mv.addObject(new Cliente());
-		return mv;
-	}
+	
 	@RequestMapping("/usuario")
 	public ModelAndView pesquisarUsuario(){
 		//List<Usuario> todosUsuarios = genericRepository.findAll();
@@ -100,18 +87,6 @@ public class InstalacaoController {
 		genericRepository.save(cliente);
 		attributes.addFlashAttribute("mensagemInstalacao","Cliente salvo com sucesso!");
 		return "redirect:/comissao/cliente/novo";
-	}
-	
-	@RequestMapping("/cliente/{codigo}")
-	public ModelAndView edicao(@PathVariable("codigo") Cliente cliente){
-		ModelAndView mv = new ModelAndView(CADASTRO_CLIENTE_VIEW);
-		mv.addObject(cliente);
-		return mv;
-	}
-	@RequestMapping(value="/cliente/{codigo}", method = RequestMethod.DELETE)
-	public String excluir(@PathVariable Long codigo){
-		genericRepository.delete(codigo);
-		return "redirect:/comissao/cliente";
 	}
 	
 	@ModelAttribute("todasCategorias")

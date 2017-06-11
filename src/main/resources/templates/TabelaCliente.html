@@ -31,7 +31,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <a th:href="@{/comissao/cliente/novo}">
+                                    <a th:href="@{/cliente/novo}">
                                         <button class="btn btn-primary right" type="button">
                                             Novo
                                         </button>
@@ -70,18 +70,20 @@
                                             <td class="text-center" th:text="${cliente.cpf}">
                                             </td>
                                             <td class="text-center">
-                                                <a class="btn btn-link btn-xs" data-placement="top" rel="tooltip" th:href="@{/comissao/cliente/{codigo}(codigo=${cliente.codigo})}" title="Editar">
+                                                <a class="btn btn-link btn-xs" data-placement="top" rel="tooltip" th:href="@{/cliente/{codigo}(codigo=${cliente.codigo})}" title="Editar">
                                                     <span aria-hidden="true" class="glyphicon glyphicon-pencil">
                                                     </span>
                                                 </a>
-                                                <a class="btn btn-link btn-xs" data-placement="top" title="Excluir" data-toggle="modal" data-target="#confirmacaoExclusaoModal">
+                                                <a class="btn btn-link btn-xs" data-placement="top" title="Excluir" data-toggle="modal"
+                                                 data-target="#confirmacaoExclusaoModal"
+                                                  th:attr="data-codigo=${cliente.codigo}, data-descricao=${cliente.nomeCliente}, data-nomeview=cliente">
                                                     <span aria-hidden="true" class="glyphicon glyphicon-remove">
                                                     </span>
                                                 </a>
-                                                <a class="btn btn-link btn-xs js-atualizar-status" data-placement="top" rel="tooltip">
-                                                    <span aria-hidden="true" class="glyphicon glyphicon-check">
-                                                    </span>
-                                                </a>
+<!--                                                 <a class="btn btn-link btn-xs js-atualizar-status" data-placement="top" rel="tooltip"> -->
+<!--                                                     <span aria-hidden="true" class="glyphicon glyphicon-check"> -->
+<!--                                                     </span> -->
+<!--                                                 </a> -->
                                             </td>
                                         </tr>
                                         <tr>
