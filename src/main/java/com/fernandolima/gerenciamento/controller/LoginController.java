@@ -12,9 +12,4 @@ public class LoginController {
 	public String paginaInicial() {
 		return "Login";
 	}
-	@RequestMapping("/dashboard")
-	public String dashboard(){
-		return "index";
-	}
-
 }
