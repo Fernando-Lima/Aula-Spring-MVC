@@ -1,56 +1,596 @@
-.right {
-    float: right;
+body {
+	margin-top: 50px;
 }
 
-.left {
-    float: left;
+.rigth {
+	float: right
 }
 
-.checkbox-tecnicos {
-    margin-left: 20px;
+@font-face {
+	font-family: MontserratAlternates;
+	src: url(MontserratAlternates-Bold.ttf);
 }
 
-p {
-    color: #777;
+.hide {
+	display: inherit !important;
+}
+.hiden-on{
+	display: none;
 }
 
-.navbar {
-    margin-bottom: 0 !important;
+.top p {
+	margin: 45px 0 0 50px;
+	float: right;
 }
 
-.margin0 {
-    margin: 0;
+.top a:link {
+	text-decoration: none;
+	color: #2B2B24 !important;
 }
 
-.margin10 {
-    margin: 0 10px;
+.top a:hover {
+	color: #02B3E4 !important;
 }
 
-.padding10 {
-    padding: 10px !important:
+.top p span {
+	margin-right: 5px;
 }
 
-.paddingRight {
-    padding-right: 15px;
+.fone {
+	color: #2B2B24;
 }
 
-.padding0 {
-    padding: 0;
+h2 {
+	font-family: Helvetica;
+	font-size: 4.2vw;
+	font-weight: 100;
+	line-height: 1.23;
+	color: #0082BB;
+	padding-bottom: 24px;
 }
 
-.main {
-    margin-top: 20px;
-}
-.campoId{
-	width: 0.3% !important;
+.contato h2 {
+	color: #F1F1F1;
 }
 
+h3 {
+	color: #2B2B24;
+}
+
+.logo {
+	padding-left: 15px;
+}
+
+.menu ul {
+	padding: 40px 30px 40px 0;
+}
+
+.menu ul li a {
+	font-weight: bold;
+	color: #0082BB !important;
+}
+
+.menu ul li {
+	padding-right: 5px;
+}
+
+.menu ul li a:hover {
+	color: #686868 !important;
+}
+
+.navbar-default {
+	background-color: #fff !important;
+	border: none;
+	/*border-bottom: solid 1px #0082BB;*/
+	/*background-color: rgba(255,255,255,0.7);*/
+}
+
+.icones {
+	background: url(../img/iconSprite.png);
+}
+
+.face:hover {
+	background: url('../img/iconSprite.png') no-repeat 0 0;
+	width: 17px;
+	height: 31px;
+}
+
+.face {
+	background: url('../img/iconSprite.png') no-repeat 0 -64px;
+	width: 17px;
+	height: 31px;
+	margin: 8px 0 0 30px;
+}
+
+.icon-email:hover {
+	background: url('../img/iconSprite.png') no-repeat -313px -1px;
+	width: 37px;
+	height: 27px;
+}
+
+.icon-email {
+	background: url('../img/iconSprite.png') no-repeat -313px -65px;
+	width: 37px;
+	height: 27px;
+	margin: 8px 0 0 30px;
+}
+
+.banner {
+	padding-top: 0;
+	height: auto;
+}
+
+.ancora {
+	width: 100%;
+	height: 2px;
+	padding-bottom: 34px;
+}
+
+.plano {
+	padding-top: 79px;
+	padding-right: 0;
+}
+
+.mensagem_plano h4, .vantagens h4, .vantagens p, .servicos h4 {
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 2.0vw;
+	color: #;
+	padding: 40px 5px 55px 5px;
+	;
+}
+
+.mensagem_plano h4 span {
+	color: #0082BB;
+}
+
+.goPlanos {
+	margin: 25px 0 0 0;
+	padding: 0;
+	width: 100%;
+	height: 50px;
+	border-top: solid 1px #F2F2F2;
+}
+
+.goPlanos:hover {
+	background-color: #F2F2F2;
+}
+
+.conteudo_plano {
+	height: auto;
+	margin: 0;
+	padding-top: 25px;
+	box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, 0.40);
+	border: solid 1px #F4F4F4;
+}
+
+.conteudo_plano h6 {
+	font-size: 15px;
+	color: #2B2B24;
+	text-align: center;
+	line-height: 22.8px;
+}
+
+.conteudo_plano h6 span {
+	font-weight: bold;
+}
+
+.conteudo_plano p {
+	padding-top: 10px;
+	text-align: center;
+}
+
+.conteudo_plano a {
+	text-decoration: none;
+}
+
+.img_plano {
+	width: 85px;
+	height: 85px;
+	background-color: #02B3E4;
+	margin-left: -30px;
+}
 
 
+/*.green{
+	background-color: #15C26B;
+}*/
+
+.img_plano i {
+	margin: 10px 25px 20px 0px !important;
+}
+
+.text-plano {
+	text-align: justify;
+}
+
+.residencial, .empresarial, .host, .evento, .email, .conteudo {
+	margin-top: 15px;
+	height: auto;
+}
+
+.vantagens {
+	background: url(../img/vantagens.jpg) no-repeat fixed 0 0 rgba(0, 0, 0, 0.78);
+	margin-top: 100px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vantagens h4 {
+	position: relative;
+	margin-top: 60px;
+	color: #F1F1F1;
+	text-shadow: 3px 3px 3px #000000;
+	font-size: 2.9vw;
+}
+
+.vantagens p {
+	padding: 20px 0 10px 0;
+	text-align: left;
+	font-family: Arial;
+	color: #f1f1f1;
+}
+
+.vantagens ul {
+	margin: 150px 0;
+	padding: 0;
+}
+
+.vantagens li {
+	margin: 10px;
+	font-size: 2.0vw;
+	text-decoration: none;
+	list-style: none;
+	color: #F1F1F1;
+	text-shadow: 3px 3px 3px #000000;
+}
+
+.vantagens i {
+	margin: 12px 15px 0 0;
+	float: left;
+}
+
+.servicos {
+	margin-top: 79px;
+	/*background-color: #F2F2F2;*/
+	/*background-image: url(../img/backgroung-icons.jpg);*/
+}
+
+.servico {
+	padding-top: 60px;
+}
+
+.servico h3 {
+	margin-bottom: 20px;
+}
+
+.fade-in {
+	/*box-shadow*/
+	transition: box-shadow 25s ease-in-out;
+	-moz-transition: box-shadow .25s ease-in-out;
+	-webkit-transition: box-shadow .25s ease-in-out;
+}
+
+.fade-in:hover {
+	box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, 0.40);
+}
+
+.img_host, .img_evento, .img_email {
+	text-align: center;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px 50px 50px 50px;
+	margin-bottom: 30px;
+}
+
+.servicos p {
+	text-align: center;
+}
+
+.servicos h3, .empresarial h3 {
+	margin-top: 10px;
+	color: #686868;
+	text-align: center;
+}
+
+.mensagem {
+	text-align: center;
+}
+
+.mensagem span {
+	font-weight: bold;
+}
+
+.servicos, .contato {
+	height: auto;
+	/*background-image: url(../img/teach-pattern-2.png)  ;*/
+}
+
+.sobre {}
+
+.sobre-img {
+	padding: 0;
+	margin-top: 80px;
+}
 
 
+/*----------------------------------- EFEITO CSS3  by http://www.tutorialwebdesign.com.br/maravilhoso-efeito-de-hover-e-zoom-com-css3/ -------------------------------------------*/
+
+.hoverzoom {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.hoverzoom>img {
+	width: 100%;
+	border-radius: 2px;
+	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+
+.hoverzoom:hover>img {
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+.hoverzoom .retina {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.78);
+	border-radius: 2px;
+	text-align: center;
+	padding: 100px;
+	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+
+.hoverzoom:hover .retina {
+	opacity: 1;
+	box-shadow: inset 0 0 100px 50px rgba(0, 0, 0, 0.5);
+}
+
+.hoverzoom .retina p {
+	font-size: 20px;
+	color: #fff;
+}
+
+.hoverzoom .retina a {
+	display: block;
+	width: 150px;
+	background: #6fc5e9;
+	border: 1px solid #59afd4;
+	border-radius: 4px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 15px;
+	margin: 16px auto 0;
+}
 
 
+/*--------------------------------------------------------------------------------------------------------------*/
+
+.conteudo-sobre {
+	height: auto;
+	padding: 0;
+	background-color: #2E6DA4;
+}
+
+.contato {
+	height: auto;
+	color: #f2f2f2;
+	background-color: #333333;
+}
+
+.contato .conteudo {
+	padding: 0 10px 0 0;
+}
+
+.contato img {
+	float: left;
+	margin: 5px 15px 5px 0;
+}
+
+.contato .img-icon, .cont {
+	height: auto;
+	padding: 5px 0;
+}
+
+.contato .img-icon i {
+	padding-right: 25px;
+}
+
+.img-icon a {
+	text-decoration: none;
+	color: #f2f2f2;
+}
+
+.img-icon a:hover {
+	color: #0082BB;
+}
+
+.local p, .phone p, .time p {
+	padding-left: 40px;
+}
+
+.contato span {
+	font-weight: bold;
+}
+
+.contato h3 {
+	margin: 10px 0 15px 0;
+}
+
+.contato i {
+	float: left;
+}
+
+.phone p {
+	font-size: 16px;
+}
+
+.conteudo {
+	padding-left: 0;
+}
+
+.time p {
+	margin-bottom: 0;
+}
+
+.conteudo_social {
+	margin-bottom: 15px;
+}
+
+.social {
+	float: right;
+	padding: 15px 0;
+}
+
+.host, .evento, .email h3 {
+	text-align: center;
+}
 
 
+/*--------------- css corporativo.html ------------------------------*/
 
+.apresentacao {
+	width: 100%;
+	height: 550px;
+}
+
+.ipv6 {
+	padding: 15px;
+}
+
+.footer {
+	background: #222222;
+	height: 50px;
+}
+
+.footer p {
+	padding: 15px 0 0 0;
+	
+	color: #fff;
+	text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+	.menu ul {
+		padding: 40px 0;
+	}
+	.text-plano p {
+		height: 70px;
+	}
+	.hide {
+		display: none !important;
+	}
+	.conteudo_plano {
+		height: auto;
+	}
+	.nav li a {
+		padding: 15px 5px;
+	}
+	.logo {
+		padding-left: none;
+	}
+	.face, .icon-email {
+		margin: 8px 0 0 20px;
+	}
+	.vantagens i {
+		margin: 8px 10px 0 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.top {
+		display: none;
+	}
+	
+	h2 {
+		font-size: 2.6rem;
+		padding-bottom: 0px;
+	}
+	.mensagem_plano h4, .vantagens h4, .vantagens p, .servicos h4 {
+		font-size: 1.7rem;
+	}
+	.banner {
+		padding-top: 59px;
+	}
+	.face, .icon-email {
+		margin: 15px 0 0 10px
+	}
+	.icon-email {
+		margin-top: 0px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	.ancora {
+		padding-bottom: 0;
+	}
+	.plano, .servicos, .sobre, .sobre-img, .servicos h4, .mensagem_plano h4 {
+		margin-top: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.navbar-default {
+		opacity: 0.9 !important;
+		-moz-opacity: 0.9;
+		!important;
+	}
+	.logo a img {
+		width: 100px;
+		height: 64px;
+		opacity: 100;
+	}
+	.hoverzoom .retina {
+		padding: 10px;
+	}
+	.hoverzoom .retina p {
+		font-size: 13px;
+	}
+	.hoverzoom .retina a {
+		padding: 5px 15px;
+	}
+	.vantagens li {
+		font-size: 2.6vw;
+	}
+	.vantagens i {
+		margin: 0 8px 0 0;
+	}
+	.vantagens h4 {
+		font-size: 3.6vw;
+	}
+	.conteudo_social {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	
+	.hiden-on{
+		display:inherit !important;
+		background-color: #333333;
+	}
+	.hiden-off{
+		display:none;
+	}
+	.footer{
+		height: auto;
+	}
+}
