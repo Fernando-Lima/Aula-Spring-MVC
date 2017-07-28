@@ -1,0 +1,22 @@
+
+html body {background: #efefef;}#wrapper {background: #ffffff;}#header {background: #ffffff;}#footer {background: #ffffff;}body { background: #efefef; }
+.single-post .page-title-subtitle { display: none; }.single-post .post-single { border-top: 1px solid #efefef; padding-top: 60px; }
+.map-wrapper [id^="google_map_"], .portfolio li a img, .team-member img.team-avatar, .post-masonry a img, .client-item img, iframe{-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: url(http://www.valemais.net/site/wp-content/themes/valemais/images/grayscale.svg#greyscale); filter: gray; }
+span.wpcf7-not-valid-tip {
+    color: #fff;
+    display: block;
+    font-size: 10px;
+}
+ul#mainnav > li{
+background:transparent;
+}
+#navigation{
+margin-top:15px
+}
+#header-social{
+margin-top:15px
+}
+ul#filters {
+display:none !important;
+}
+#header { padding-top: 15px; padding-bottom: 10px;  }

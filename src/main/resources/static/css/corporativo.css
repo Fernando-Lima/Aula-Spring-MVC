@@ -1,0 +1,37 @@
+.plano_container{
+	margin: 20px 0;
+	padding: 10px 10px;
+	background-color: #F2F2F2;
+	border-radius: 15px 15px 0 0;
+}
+.plano_titulo{
+	height: auto;
+	margin-left: 30px;
+	margin-bottom: 20px;	
+}
+.plano_titulo h3{
+	font-size: 22px;
+	color:#222222;
+}
+.plano_img{
+	height: 150px;
+	background-color: #0082BB;
+}
+.plano_conteudo{
+	height: auto;
+	border: solid 1px;
+}
+.plano_conteudo:hover{
+	background-color: #0082BB;
+}
+.plano_conteudo .plano_velocidade, .plano_descricao, .plano_valor{
+	text-align: center;
+	border-bottom: solid 1px;
+}
+.plano_valor{
+	border-bottom: none;
+}
+.plano_conteudo .plano_velocidade h2{
+	font-size: 23px;
+	color: #D9534F;
+}
